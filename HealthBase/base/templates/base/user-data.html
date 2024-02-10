@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        strong {
+            color: #555;
+        }
+        form {
+            margin-top: 20px;
+            text-align: center;
+        }
+        button[type="submit"] {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>User Data</h1>
+        <p><strong>Username:</strong> {{ user.first_name }} {{ user.last_name }}</p>
+        <!-- <p><strong>Email:</strong> {{ user.email }}</p> -->
+        <!-- <p><strong>Aadhar Number:</strong> {{ user.aadhar_number }}</p> -->
+        <!-- <p><strong>Phone Number:</strong> {{ user.phone_number }}</p> -->
+        <p><strong>Age:</strong> {{ user.age }}</p>
+        <p><strong>Sex:</strong> {{ user.get_sex_display }}</p>
+        <form action="{% url 'audio' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Upload</button>
+        </form>
+        <!-- Add more fields if necessary -->
+    </div>
+</body>
+</html>

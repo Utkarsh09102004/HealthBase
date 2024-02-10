@@ -1,8 +1,15 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
+class CustomUserManager(models.Manager):
+    def get_by_aadhar_number(self, aadhar_number):
+        try:
+            return self.get(aadhar_number=aadhar_number)
+        except self.model.DoesNotExist:
+            return None
 class CustomUser(AbstractUser):
-    aadhar_number = models.CharField(max_length=12, unique=True)
+    aadhar_number = models.CharField(max_length=12)
     phone_number = models.CharField(max_length=15)
     DOCTOR = 'doctor'
     PATIENT = 'patient'
@@ -36,3 +43,16 @@ class Doctor(models.Model):
 
 class Prescription(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
+    date_of_creation = models.DateTimeField(auto_now_add=True)
+    medical_advice = models.CharField(max_length=500)
+    body_temperature = models.CharField(max_length=30)
+    medicine_list = models.CharField(max_length=500)
+    reason_for_visit = models.CharField(max_length=500)
+    blood_pressure = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"Prescription for {self.patient}"
+
+class Audio_store(models.Model):
+    record = models.FileField(upload_to='documents/')
+    prescription = models.OneToOneField(Prescription, on_delete=models.CASCADE, related_name='audio_store')
