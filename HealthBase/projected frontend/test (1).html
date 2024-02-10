@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Health and Safety Management System</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .banner {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .banner h1 {
+            margin-left: 20px;
+        }
+
+        #patientProfile {
+            font-size: 23px;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width:90%;
+        }
+
+        #prescriptionForm {
+            margin-top: 20px;
+        }
+
+        .button1 {
+            background-color: #000208;
+            color: #fff;
+            /* padding: 10% 15%; */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position:absolute;
+            top:4%;
+            left:88%;
+            right:12%;
+            bottom:96%;
+            width: 10%;
+            height: 5%;
+        }
+
+        .image {
+            width: 35vh;
+            height: 35vh;
+            float: left;
+            padding-right: 18%;
+            padding-left: 20%;
+            padding-top: 2%;
+        }
+
+        .button2 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button3 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button4 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .button5 {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        
+        #printButton {
+            margin-top: 10px;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .HealthCondition {
+            padding: 1%;
+            margin-top: 2%;
+            margin-left: 18%;
+            margin-bottom: 7%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .Medication {
+            padding: 1%;
+            margin-top: 2%;
+            margin-left: 18%;
+            margin-bottom: 7%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .MedicalTests {
+            padding: 1%;
+            margin-top: 2%;
+            margin-left: 18%;
+            margin-bottom: 7%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .right-container {
+            display: flex;
+            flex:1;
+        }
+
+        .Prescription {
+            display: flex;
+            float: right;
+            height: 100%;
+            width: 100%;
+            padding: 1%;
+            margin-top: 2%;
+            margin-left: 7%;
+            margin-bottom: 2%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        #medicines, #duration, #healthIssue, #medicalTests {
+            margin-bottom: 2%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>Human Health and Safety Management System</h1>
+        <button class="button1" onclick="openDoctorLogin()">Doctor Login</button>
+    </div>
+
+    <div id="patientProfile">
+        <img src = "https://cdn-icons-png.flaticon.com/512/17/17004.png" alt = "Profile" class="image">
+        <h2>Patient Profile</h2>
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Sex:</strong> Male</p>
+        <p><strong>UID:</strong> ABC123</p>
+        <p><strong>Age:</strong> 30</p>
+    </div>
+<div class = card>
+    <div class = left-container>
+        <div id="currentCondition">
+            <div class="HealthCondition" style="width: 18rem;">
+            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+            <div class="card-body">
+                <h3 class="card-title">Current Health Condition</h3>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+        <div id = "currentMedication">
+            <div class="Medication" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">Current Medications</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+        <div id = "medicalTests">
+            <div class="MedicalTests" style="width: 18rem;">
+                <div class="card-body">
+                    <h3 class="card-title">Medical Tests</h3>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cras justo odio</li>
+                    <li class="list-group-item">Dapibus ac facilisis in</li>
+                    <li class="list-group-item">Vestibulum at eros</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = right-container>
+        <div class="Prescription">
+            <div class="card-body">
+                <h3 class="card-title">Create New Prescription</h3>
+          
+                    <label for="healthIssue">Health Issue:</label><br>
+                    <textarea id = "healthIssue" name="healthIssue" rows="10" cols="100%"></textarea><br>
+        
+                    <label for="medicalTests">Medical Tests:</label><br>
+                    <textarea id = "medicalTests" name="medicalTests" rows="10" cols="100%"></textarea><br>
+
+                    <label for="medicines">Medicines:</label><br><br>
+                    <input type="text" id="medicines" placeholder="Enter medicines"></br><br>
+                    <button class="button5" onclick="openDoctorLogin()">Add another Medicine</button><br><br>
+        
+                    <button id = "print" class="button2" onclick="printPrescription()">Print Prescription</button>
+        
+                    <button id = "imagePrescription" class="button3" onclick="uploadImagePrescription()">Upload Image Prescription</button>
+        
+                    <button id = "audioPrescription" class="button4" onclick="uploadAudioPrescription()">Upload Audio Prescription</button>
+                    
+                    function uploadAudioPrescription() {
+                        <form action="/upload" method="post" enctype="multipart/form-data">
+                        <label for="fileInput">Choose a file:</label>
+                        <input type="file" id="fileInput" name="uploadedFile" accept=".jpg, .jpeg, .png">
+                        <button type="submit">Upload File</button>
+                        </form>
+                    }
+            </div>
+        </div>
+    </div>
+
+</div>
+
+    <script src = "./index.js">
+        function openDoctorLogin() {
+            // Implement doctor login functionality here
+            alert('Doctor login functionality to be implemented.');
+        }
+
+        function printPrescription() {
+            // Implement prescription printing functionality here
+            alert('Prescription printed!');
+        }
+
+        function uploadImagePrescription() {
+            // Implement image prescription upload functionality here
+            alert('Image prescription uploaded!');
+        }
+
+        // function uploadAudioPrescription() {
+        //     <input type="file" id="fileInput" name="uploadedFile" accept=".jpg, .jpeg, .png">
+        //     <button type="submit">Upload File</button>
+        // }
+    </script>
+</body>
+</html>

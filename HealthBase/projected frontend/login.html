@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Health and Safety Management System</title>
+    <style>
+		body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+		.banner {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .banner h1 {
+            margin-left: 20px;
+        }
+
+		.Login {
+			text-align: center;
+			font-size: 23px;
+            margin: auto;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width:40%;
+		}
+
+		.button2 {
+			background-color: #000208;
+            color: #fff;
+            font-size: large;
+        }
+
+	</style>
+</head>
+<body>
+	<div class="banner">
+        <h1>Human Health and Safety Management System</h1>
+    </div>
+    <form action="/submit_form" method="post">
+		<div class = "card">
+			<div class="Login">
+				<div class="card-body">
+					<label for="Username/Email">Username/Email:</label><br>
+					<input type="text" id="Username" placeholder="Enter your Username/EmailID"><br><br>
+					<label for="Password">Password:</label><br>
+					<input type="text" id="Password" placeholder="Enter your Password"></br><br>
+					<button class="button2" onclick="Redirect()">Login</button><br>
+					<p>Don't have an account?</p>
+					<button class="button2" onclick="SignUp()">Sign Up</button>
+
+				</div>
+			</div>
+    </form>
+</body>
